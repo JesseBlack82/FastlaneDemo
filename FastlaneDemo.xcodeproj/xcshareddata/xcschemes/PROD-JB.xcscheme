@@ -5,19 +5,35 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "88BD707B1B9E88AE00192AAA"
+               BuildableName = "QA JB.app"
+               BlueprintName = "FastlaneDemo"
+               ReferencedContainer = "container:FastlaneDemo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      buildConfiguration = "PROD-JB">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88BD707B1B9E88AE00192AAA"
-            BuildableName = "FastlaneDemo.app"
+            BuildableName = "QA JB.app"
             BlueprintName = "FastlaneDemo"
             ReferencedContainer = "container:FastlaneDemo.xcodeproj">
          </BuildableReference>
@@ -28,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
+      buildConfiguration = "PROD-JB"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
@@ -37,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88BD707B1B9E88AE00192AAA"
-            BuildableName = "FastlaneDemo.app"
+            BuildableName = "QA JB.app"
             BlueprintName = "FastlaneDemo"
             ReferencedContainer = "container:FastlaneDemo.xcodeproj">
          </BuildableReference>
@@ -49,23 +65,24 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
+      buildConfiguration = "PROD-JB"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88BD707B1B9E88AE00192AAA"
-            BuildableName = "FastlaneDemo.app"
+            BuildableName = "QA JB.app"
             BlueprintName = "FastlaneDemo"
             ReferencedContainer = "container:FastlaneDemo.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "PROD-JB">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "PROD-JB"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
