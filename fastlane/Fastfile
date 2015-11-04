@@ -1,0 +1,77 @@
+fastlane_version "1.20.0"
+default_platform :ios
+
+platform :ios do
+
+  developer_info = {username: "Jesse Black", team_name: "Jesse Black"}
+
+  build_variants = [
+    {
+      gym_params: {
+        scheme: "PROD-JB", configuration: "PROD-JB"
+      },
+      sigh_params: {
+        app_identifier: "com.jesseblack.prod.FastlaneDemo"
+      }.merge(developer_info)
+    },
+    {
+      gym_params: {
+        scheme: "QA-JB", configuration: "QA-JB"
+      },
+      sigh_params: {
+        app_identifier: "com.jesseblack.qa.FastlaneDemo"
+      }.merge(developer_info)
+    },
+    {
+      gym_params: {
+        scheme: "PROD-SK", configuration: "PROD-SK"
+      },
+      sigh_params: {
+        app_identifier: "com.sk.prod.FastlaneDemo"
+      }.merge(developer_info)
+    },
+    {
+      gym_params: {
+        scheme: "QA-SK", configuration: "QA-SK"
+      },
+      sigh_params: {
+        app_identifier: "com.sk.qa.FastlaneDemo"
+      }.merge(developer_info)
+    }
+  ]
+
+
+  def archive(variant:, is_adhoc:)
+    sigh_params = variant[:sigh_params]
+    gym_params = variant[:gym_params]
+    output_name = gym_params[:scheme]
+
+    if is_adhoc
+      sigh_params[:adhoc] = true
+      output_name += "-adhoc"
+    else
+      sigh_params[:adhoc] = nil
+      output_name += "-appstore"
+    end
+
+    gym_params[:output_name] = output_name
+
+    sigh(sigh_params)
+    update_project_provisioning
+    gym(gym_params)
+  end
+
+
+  desc "Build All Schemes"
+  lane :build_all_schemes do
+
+      build_variants.each do  |variant|
+        puts "building adhoc - #{variant}"
+        archive(variant: variant, is_adhoc: true)
+        puts "building appstore - #{variant}"
+        archive(variant: variant, is_adhoc: false)
+      end
+
+  end
+
+end
